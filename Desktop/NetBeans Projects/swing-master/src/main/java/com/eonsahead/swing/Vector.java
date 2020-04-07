@@ -42,11 +42,10 @@ public class Vector {
     
     public double dot(Vector v) {
         double sum = 0;
-        //double product;
+        double product;
         for (int i = 0; i < 4; i++) {
-            sum = sum + this.get(i) * v.get(i);
-//            product = this.get(i) * v.get(i);
-//            sum += product;
+            product = this.get(i) * v.get(i);
+            sum += product;
         } //for
         return sum;
     } //dot( double )
