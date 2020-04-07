@@ -22,29 +22,33 @@ public class Vector {
         this.set(1, y);
         this.set(2, z);
         this.set(3, 1);
-    } //Vector( double, double, double )
+    } //Vector( int, int, int )
+    
+    public Vector(int x, int y, int z, int h) {
+        this.elements = new double[4];
+        this.set(0, x);
+        this.set(1, y);
+        this.set(2, z);
+        this.set(3, h);
+    } //Vector( int, int, int, int )
     
     public void set(int index, double val) {
         this.elements[index] = val;
     } //set()
     
     public double get(int index) {
-        return elements[index];
+        return this.elements[index];
     } //get
     
     public double dot(Vector v) {
-        double xProduct = this.get(0) * v.get(0);
-        double yProduct = this.get(1) * v.get(1);
-        double zProduct = this.get(2) * v.get(2);
-        double sum = xProduct + yProduct + zProduct;
-        return sum;
-//        double sum = 0;
-//        double product;
-//        for (int i = 0; i < 4; i++) {
+        double sum = 0;
+        //double product;
+        for (int i = 0; i < 4; i++) {
+            sum = sum + this.get(i) * v.get(i);
 //            product = this.get(i) * v.get(i);
 //            sum += product;
-//        } //for
-//        return sum;
+        } //for
+        return sum;
     } //dot( double )
     
     public double magnitude() {
