@@ -65,16 +65,16 @@ public class Matrix {
 
     public void scale(double xFactor, double yFactor, double zFactor) {
         this.identity();
-        this.set(0, 0, (this.get(0, 0) * xFactor));
-        this.set(0, 1, (this.get(0, 1) * yFactor));
-        this.set(1, 0, (this.get(1, 0) * zFactor));
+        this.set(0, 0, (xFactor));
+        this.set(1, 1, (yFactor));
+        this.set(2, 2, (zFactor));
     } // scale( double )
 
     public void translate(double xVal, double yVal, double zVal) {
         this.identity();
-        this.set(0, 0, (this.get(0, 0) + xVal));
-        this.set(0, 1, (this.get(0, 1) + yVal));
-        this.set(1, 0, (this.get(1, 0) + zVal));
+        this.set(0, 0, (zVal));
+        this.set(1, 1, (yVal));
+        this.set(2, 2, (zVal));
     } // translate( double, double, double )
 
     public Matrix multiply(Matrix otherMatrix) {
