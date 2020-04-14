@@ -72,12 +72,12 @@ public class SimpleBitmap extends JPanel {
                 
                 if(count == 56){
                     raster.setPixel(row, column, yellow);
-                }
+                } //if
                 else {
                     raster.setPixel(row, column, black);
-                }
-            }
-        }
+                } //else
+            } //for
+        } //for
 
         
 //        for (int j = 0; j < h; j++){
