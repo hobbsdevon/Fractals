@@ -41,6 +41,24 @@ public class SimpleBitmap extends JPanel {
         int[] black = {0, 0, 0};
         int[] yellow = {255, 255, 0};
         
+        double xMin = 0;
+        double xMax = BITMAP_WIDTH;
+        double yMin = 0;
+        double yMax = BITMAP_HEIGHT;
+        
+        double uMin = -1.5;
+        double uMax = 1.5;
+        double vMin = -1.5;
+        double vMax = 1.5;
+        
+        for(int row = 0; row < BITMAP_HEIGHT; row++){
+            double y = row;
+            for(int column = 0; column < BITMAP_WIDTH; column++){
+                double x = column;
+            }
+        }
+
+        
         for (int j = 0; j < h; j++){
             for (int i = 0; i < w; i++){
                 if (i < j) {
