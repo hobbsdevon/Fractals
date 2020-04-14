@@ -55,20 +55,41 @@ public class SimpleBitmap extends JPanel {
             double y = row;
             for(int column = 0; column < BITMAP_WIDTH; column++){
                 double x = column;
+                
+                double u = uMin + (uMax - uMin) * (x - xMin) / (xMax - xMin);
+                double v = vMin + (vMax - vMin) * (y - yMin) / (yMax - yMin);
+                
+                Complex z = new Complex(0, 0);
+                Complex c = new Complex(u, v);
+                
+                int count = 0;
+                
+                while (z.magnitudeSquared() < 4 && count < 56){
+                    z = z.multiply(z);
+                    z = z.add(c);
+                    count++;
+                } //while
+                
+                if(count == 56){
+                    raster.setPixel(row, column, yellow);
+                }
+                else {
+                    raster.setPixel(row, column, black);
+                }
             }
         }
 
         
-        for (int j = 0; j < h; j++){
-            for (int i = 0; i < w; i++){
-                if (i < j) {
-                    raster.setPixel(i, j, yellow);
-                } //if
-                else {
-                    raster.setPixel(i, j, black);
-                } //else
-            } //for
-        } //for
+//        for (int j = 0; j < h; j++){
+//            for (int i = 0; i < w; i++){
+//                if (i < j) {
+//                    raster.setPixel(i, j, yellow);
+//                } //if
+//                else {
+//                    raster.setPixel(i, j, black);
+//                } //else
+//            } //for
+//        } //for
         g2d.drawImage(image, scale, this);
     } //paintComponent(Graphics)
 }
