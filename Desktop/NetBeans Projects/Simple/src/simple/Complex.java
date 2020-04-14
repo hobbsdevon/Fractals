@@ -11,11 +11,12 @@ package simple;
  */
 public class Complex {
     
-    public double real;
-    public double imaginary;
+    private double real;
+    private double imaginary;
     
     Complex(double real, double imaginary){
-       
+       this.real = real;
+       this.imaginary = imaginary;
     } //Complex(double, double)
     
     public double getReal(){
@@ -52,8 +53,8 @@ public class Complex {
        return product;
     } //multiply(Complex)
     
-    public double magnitude(){
-        double magnitude = Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
+    public double magnitudeSquared(){
+        double magnitude = this.real * this.real + this.imaginary * this.imaginary;
         return magnitude;
     } //magnitude()
 } //Complex
